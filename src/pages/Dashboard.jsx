@@ -44,9 +44,9 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="container py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-display mb-2">
+    <div className="container section-padding-sm">
+      <div className="mb-12">
+        <h1 className="mb-3">
           Welcome back, {user?.user_metadata?.name || user?.email}
         </h1>
         <p className="text-gray-600">
