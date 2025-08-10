@@ -42,21 +42,21 @@ const Home = () => {
   return (
     <div className="animate-fade-in">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/5 to-accent/5 py-20">
+      <section className="bg-gradient-to-br from-primary/5 to-accent/5 section-padding">
         <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-display mb-6">
+          <div className="max-w-4xl mx-auto text-center animate-fade-in">
+            <h1 className="text-5xl lg:text-6xl font-display mb-8 leading-tight">
               Transform Your <span className="text-primary">Builder-Damaged</span> Soil Into a Thriving Lawn
             </h1>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl lg:text-2xl text-gray-600 mb-10 leading-relaxed max-w-3xl mx-auto">
               Professional-grade soil revival kits paired with smart monitoring technology. 
               Get your lawn established within one growing season with our turnkey solution.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/order" className="btn-primary text-lg px-8 py-4">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Link to="/order" className="btn-primary text-lg px-10 py-4 animate-bounce-subtle">
                 Order Your Kit
               </Link>
-              <Link to="/signup" className="btn-secondary text-lg px-8 py-4">
+              <Link to="/signup" className="btn-secondary text-lg px-10 py-4">
                 Learn More
               </Link>
             </div>
@@ -65,11 +65,11 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20">
+      <section className="section-padding">
         <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-display mb-4">Everything You Need for Lawn Success</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="mb-6">Everything You Need for Lawn Success</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Our comprehensive approach combines proven soil science with modern technology 
               to give you the best chance at lawn success.
             </p>
@@ -77,12 +77,12 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="card text-center animate-slide-up" style={{ animationDelay: `${index * 100}ms` }}>
-                <div className="inline-flex p-4 bg-primary/10 rounded-lg mb-4">
-                  <feature.icon className="h-8 w-8 text-primary" />
+              <div key={index} className="card text-center animate-slide-up hover:scale-105 transition-transform duration-200" style={{ animationDelay: `${index * 100}ms` }}>
+                <div className="inline-flex p-5 bg-primary/10 rounded-xl mb-6 group-hover:bg-primary/20 transition-colors">
+                  <feature.icon className="h-10 w-10 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold mb-3">{feature.title}</h3>
-                <p className="text-gray-600 text-sm">{feature.description}</p>
+                <h3 className="mb-4">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -150,13 +150,14 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container text-center">
-          <h2 className="text-3xl font-display mb-4">Ready to Transform Your Lawn?</h2>
-          <p className="text-xl mb-8 opacity-90">
+      <section className="section-padding bg-primary text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80"></div>
+        <div className="container text-center relative z-10">
+          <h2 className="text-white mb-6">Ready to Transform Your Lawn?</h2>
+          <p className="text-xl lg:text-2xl mb-10 opacity-90 max-w-2xl mx-auto">
             Join thousands of homeowners who have successfully revived their builder-damaged soil.
           </p>
-          <Link to="/order" className="bg-white text-primary px-8 py-4 rounded-md font-medium hover:bg-gray-100 transition-colors">
+          <Link to="/order" className="bg-accent text-gray-900 px-10 py-4 rounded-md font-semibold hover:bg-accent/90 transition-all duration-200 transform hover:scale-105 inline-block">
             Get Started Today
           </Link>
         </div>

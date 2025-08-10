@@ -55,52 +55,59 @@ const SensorPanel = ({
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="flex items-center space-x-3">
-          <div className="p-3 bg-blue-50 rounded-lg">
-            <Droplets className={`h-6 w-6 ${getStatusColor(moisture, 'moisture')}`} />
+        <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-blue-50 to-blue-100/50 rounded-xl border border-blue-100 hover:shadow-md transition-all duration-200">
+          <div className="p-4 bg-white rounded-xl shadow-sm">
+            <Droplets className={`h-7 w-7 ${getStatusColor(moisture, 'moisture')}`} />
           </div>
-          <div>
-            <div className="text-sm text-gray-600">Moisture</div>
-            <div className="text-xl font-semibold">{moisture}%</div>
-            <div className="text-xs text-gray-500">
+          <div className="flex-1">
+            <div className="text-sm font-medium text-gray-600 mb-1">Moisture</div>
+            <div className="text-2xl font-bold text-gray-900">{moisture}%</div>
+            <div className={`text-sm font-medium ${getStatusColor(moisture, 'moisture')}`}>
               {moisture < 30 ? 'Too Dry' : moisture > 70 ? 'Too Wet' : 'Optimal'}
             </div>
           </div>
         </div>
 
-        <div className="flex items-center space-x-3">
-          <div className="p-3 bg-green-50 rounded-lg">
-            <Activity className={`h-6 w-6 ${getStatusColor(pH, 'pH')}`} />
+        <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-green-50 to-green-100/50 rounded-xl border border-green-100 hover:shadow-md transition-all duration-200">
+          <div className="p-4 bg-white rounded-xl shadow-sm">
+            <Activity className={`h-7 w-7 ${getStatusColor(pH, 'pH')}`} />
           </div>
-          <div>
-            <div className="text-sm text-gray-600">pH Level</div>
-            <div className="text-xl font-semibold">{pH}</div>
-            <div className="text-xs text-gray-500">
+          <div className="flex-1">
+            <div className="text-sm font-medium text-gray-600 mb-1">pH Level</div>
+            <div className="text-2xl font-bold text-gray-900">{pH}</div>
+            <div className={`text-sm font-medium ${getStatusColor(pH, 'pH')}`}>
               {pH < 6.0 || pH > 7.5 ? 'Adjust Needed' : 'Good Range'}
             </div>
           </div>
         </div>
 
-        <div className="flex items-center space-x-3">
-          <div className="p-3 bg-yellow-50 rounded-lg">
-            <Zap className="h-6 w-6 text-yellow-600" />
+        <div className="flex items-center space-x-4 p-4 bg-gradient-to-r from-accent/20 to-accent/10 rounded-xl border border-accent/20 hover:shadow-md transition-all duration-200">
+          <div className="p-4 bg-white rounded-xl shadow-sm">
+            <Zap className="h-7 w-7 text-accent" />
           </div>
-          <div>
-            <div className="text-sm text-gray-600">Nutrients</div>
-            <div className="text-xl font-semibold">{nutrients}</div>
-            <div className="text-xs text-gray-500">
+          <div className="flex-1">
+            <div className="text-sm font-medium text-gray-600 mb-1">Nutrients</div>
+            <div className="text-2xl font-bold text-gray-900">{nutrients}</div>
+            <div className="text-sm font-medium text-accent">
               NPK Balance
             </div>
           </div>
         </div>
       </div>
 
-      <div className="mt-6 p-4 bg-green-50 rounded-lg">
-        <h4 className="font-medium mb-2">AI Recommendation</h4>
-        <p className="text-sm text-gray-700">
-          Your lawn is in good condition. Continue current watering schedule. 
-          Consider light fertilization in 2 weeks based on nutrient levels.
-        </p>
+      <div className="mt-8 p-6 bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl border border-primary/10">
+        <div className="flex items-start space-x-3">
+          <div className="p-2 bg-primary/10 rounded-lg">
+            <Activity className="h-5 w-5 text-primary" />
+          </div>
+          <div className="flex-1">
+            <h4 className="font-semibold text-gray-900 mb-2">AI Recommendation</h4>
+            <p className="text-gray-700 leading-relaxed">
+              Your lawn is in good condition. Continue current watering schedule. 
+              Consider light fertilization in 2 weeks based on nutrient levels.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   )

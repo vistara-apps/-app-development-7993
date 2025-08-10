@@ -22,18 +22,18 @@ const Header = () => {
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link to="/" className="text-gray-600 link-hover font-medium">
               Home
             </Link>
-            <Link to="/order" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link to="/order" className="text-gray-600 link-hover font-medium">
               Order Kit
             </Link>
             {user && (
               <>
-                <Link to="/dashboard" className="text-gray-600 hover:text-gray-900 transition-colors">
+                <Link to="/dashboard" className="text-gray-600 link-hover font-medium">
                   Dashboard
                 </Link>
-                <Link to="/setup" className="text-gray-600 hover:text-gray-900 transition-colors">
+                <Link to="/setup" className="text-gray-600 link-hover font-medium">
                   Sensor Setup
                 </Link>
               </>
@@ -55,8 +55,8 @@ const Header = () => {
                 </button>
               </div>
             ) : (
-              <div className="flex items-center space-x-3">
-                <Link to="/login" className="text-gray-600 hover:text-gray-900">
+              <div className="flex items-center space-x-4">
+                <Link to="/login" className="text-gray-600 link-hover font-medium">
                   Sign In
                 </Link>
                 <Link to="/signup" className="btn-primary">
